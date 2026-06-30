@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVOY — Сайты и лендинги под любой бизнес</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --cream-bg: #FDFAF5;
+  --cream-card: #F5F0E8;
+  --cream-border: #E8E0D0;
+  --dark: #2C2416;
+  --dark-soft: #4A3F2C;
+  --gold: #C9A84C;
+  --gold-light: #E8D5A3;
+  --silver: #9B8B6E;
+  --silver-light: #D4C5A9;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream-bg);
+  color: var(--dark);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ===== UTILITY ===== */
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.divider-line {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 24px 0;
+}
+
+/* ===== HEADER ===== */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(253, 250, 245, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--cream-border);
+  transition: all 0.3s ease;
+}
+
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.logo-mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+.logo-mini svg { height: 22px; }
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark-soft);
+}
+
+.nav-links a {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  background: var(--dark);
+  color: var(--cream-bg);
+  padding: 11px 24px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+.nav-cta:hover {
+  background: var(--gold);
+  color: var(--dark);
+  transform: translateY(-1px);
+}
+
+/* ===== HERO ===== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 90px;
+  overflow: hidden;
+}
+
+.hero-mountains {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.hero-title {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -1px;
+  color: var(--dark);
+}
+
+.hero-title .accent {
+  color: var(--gold);
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.hero-sub {
+  margin-top: 28px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--dark-soft);
+  max-width: 540px;
+}
+
+.hero-buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--dark);
+  padding: 17px 36px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(201, 168, 76, 0.4);
+}
+
+.btn-secondary {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--dark);
+  border-bottom: 1px solid var(--dark);
+  padding-bottom: 3px;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover { color: var(--gold); border-color: var(--gold); }
+
+.hero-meta {
+  margin-top: 56px;
+  display: flex;
+  gap: 48px;
+}
+
+.hero-meta-item {
+  border-left: 2px solid var(--gold);
+  padding-left: 16px;
+}
+
+.hero-meta-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+.hero-meta-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--silver);
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* ===== SECTION GENERIC ===== */
+
+section { padding: 120px 0; position: relative; }
+
+.section-head {
+  max-width: 600px;
+  margin-bottom: 64px;
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.section-title .it {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold);
+}
+
+/* ===== WHAT (services) ===== */
+
+.what-section {
+  background: var(--cream-card);
+  border-top: 1px solid var(--cream-border);
+  border-bottom: 1px solid var(--cream-border);
+}
+
+.what-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--cream-border);
+  border: 1px solid var(--cream-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.what-card {
+  background: var(--cream-card);
+  padding: 44px 36px;
+  transition: background 0.3s ease;
+}
+
+.what-card:hover { background: var(--cream-bg); }
+
+.what-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 28px;
+}
+
+.what-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.what-card p {
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--dark-soft);
+}
+
+/* ===== PROCESS — the mountain path ===== */
+
+.process-section {
+  background: var(--cream-bg);
+}
+
+.process-path {
+  position: relative;
+  margin-top: 20px;
+}
+
+.path-line {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--cream-border);
+  z-index: 0;
+}
+
+.path-line-progress {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  height: 1px;
+  background: var(--gold);
+  z-index: 1;
+  width: 0%;
+  transition: width 1.4s cubic-bezier(0.6, 0, 0.4, 1);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.process-step {
+  text-align: left;
+}
+
+.process-marker {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--cream-bg);
+  border: 1.5px solid var(--cream-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--silver);
+  margin-bottom: 28px;
+  transition: all 0.4s ease;
+}
+
+.process-step.active .process-marker {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--cream-card);
+}
+
+.process-step h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.process-step p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--dark-soft);
+}
+
+/* ===== ABOUT / signature ===== */
+
+.about-section {
+  background: var(--dark);
+  color: var(--cream-bg);
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.about-section .eyebrow { color: var(--gold-light); }
+
+.about-section h2 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 24px;
+}
+
+.about-section h2 .it {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.about-section p {
+  font-size: 15.5px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #D8D0BE;
+}
+
+.about-section p + p { margin-top: 18px; }
+
+.about-quote {
+  margin-top: 32px;
+  padding-left: 22px;
+  border-left: 2px solid var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-style: italic;
+  color: var(--gold-light);
+  line-height: 1.6;
+}
+
+.about-visual {
+  position: relative;
+  height: 380px;
+}
+
+/* ===== WHY (advantages) ===== */
+
+.why-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.why-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--cream-border);
+}
+
+.why-row:first-child { border-top: 1px solid var(--cream-border); }
+
+.why-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-style: italic;
+  color: var(--gold);
+}
+
+.why-row h3 {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.why-row p {
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--dark-soft);
+}
+
+/* ===== PRICING ===== */
+
+.pricing-section { background: var(--cream-card); }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.price-card {
+  background: var(--cream-bg);
+  border: 1px solid var(--cream-border);
+  border-radius: 18px;
+  padding: 40px 32px;
+  position: relative;
+  transition: all 0.35s ease;
+}
+
+.price-card.featured {
+  border-color: var(--gold);
+  box-shadow: 0 16px 40px rgba(201, 168, 76, 0.18);
+  transform: translateY(-12px);
+}
+
+.price-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(44, 36, 22, 0.08);
+}
+
+.price-card.featured:hover { transform: translateY(-16px); }
+
+.price-badge {
+  position: absolute;
+  top: -13px;
+  right: 32px;
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 100px;
+}
+
+.price-name {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--silver);
+  text-transform: uppercase;
+}
+
+.price-amount {
+  font-size: 38px;
+  font-weight: 800;
+  margin: 16px 0 4px;
+}
+
+.price-amount span {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--silver);
+}
+
+.price-desc {
+  font-size: 13.5px;
+  font-weight: 300;
+  color: var(--dark-soft);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.price-features {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.price-features li {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 0;
+  border-top: 1px solid var(--cream-border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-features li:first-child { border-top: none; }
+
+.price-features svg { flex-shrink: 0; width: 14px; height: 14px; }
+
+.price-cta {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1.5px solid var(--dark);
+  transition: all 0.25s ease;
+}
+
+.price-card.featured .price-cta {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+
+.price-cta:hover {
+  background: var(--dark);
+  color: var(--cream-bg);
+}
+
+.price-card.featured .price-cta:hover {
+  background: var(--dark-soft);
+  border-color: var(--dark-soft);
+}
+
+/* ===== FAQ ===== */
+
+.faq-item {
+  border-bottom: 1px solid var(--cream-border);
+}
+
+.faq-item:first-child { border-top: 1px solid var(--cream-border); }
+
+.faq-q {
+  padding: 28px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16.5px;
+  font-weight: 600;
+}
+
+.faq-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  position: relative;
+  margin-left: 24px;
+}
+
+.faq-icon::before, .faq-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--gold);
+  transition: transform 0.3s ease;
+}
+
+.faq-icon::before { width: 100%; height: 1.5px; top: 50%; transform: translateY(-50%); }
+.faq-icon::after { width: 1.5px; height: 100%; left: 50%; transform: translateX(-50%); }
+
+.faq-item.open .faq-icon::after { transform: translateX(-50%) rotate(90deg); }
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.faq-a-inner {
+  padding-bottom: 28px;
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--dark-soft);
+  max-width: 640px;
+}
+
+/* ===== CTA FINAL ===== */
+
+.cta-final {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-final h2 {
+  font-size: 48px;
+  font-weight: 800;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.2;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-final h2 .it {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold);
+}
+
+.cta-final p {
+  margin-top: 22px;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--dark-soft);
+  position: relative;
+  z-index: 2;
+}
+
+.cta-final .hero-buttons {
+  justify-content: center;
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+  background: var(--dark);
+  color: #B8AE96;
+  padding: 64px 0 32px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #423824;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: var(--cream-bg);
+}
+
+.footer-tagline {
+  font-size: 13px;
+  font-weight: 300;
+  margin-top: 12px;
+  max-width: 280px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  gap: 64px;
+}
+
+.footer-col h5 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 12px;
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover { color: var(--cream-bg); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 28px;
+  font-size: 12.5px;
+  font-weight: 300;
+}
+
+/* ===== ANIMATIONS ===== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .path-line-progress { transition: none; }
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 860px) {
+  .container { padding: 0 22px; }
+  .nav-links { display: none; }
+  .hero-title { font-size: 40px; }
+  .hero-meta { flex-wrap: wrap; gap: 28px; }
+  .section-title { font-size: 30px; }
+  .what-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; gap: 36px; }
+  .path-line, .path-line-progress { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-visual { height: 220px; }
+  .why-row { grid-template-columns: 1fr; gap: 12px; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .price-card.featured { transform: none; }
+  .footer-top { flex-direction: column; gap: 32px; }
+  .footer-links { gap: 36px; flex-wrap: wrap; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+  .cta-final h2 { font-size: 32px; }
+  section { padding: 80px 0; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="logo-mini">
+      <svg viewBox="0 0 60 40" fill="none">
+        <path d="M4,32 L16,12 L20,18 L26,32" stroke="#9B8B6E" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M17,32 L30,6 L34,14 L44,32" stroke="#C9A84C" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="M36,32 L46,16 L56,32" stroke="#9B8B6E" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      SVOY
+    </div>
+    <nav class="nav-links">
+      <a href="#what">Услуги</a>
+      <a href="#process">Процесс</a>
+      <a href="#pricing">Цены</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a href="https://t.me/Shoma_SVOY" class="nav-cta">Написать в Telegram</a>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="hero-mountains" viewBox="0 0 1140 280" preserveAspectRatio="none" fill="none">
+    <path d="M0,280 L0,180 L120,60 L220,140 L340,20 L460,150 L600,80 L740,170 L860,90 L1000,160 L1140,100 L1140,280 Z" fill="#F5F0E8"/>
+    <path d="M0,280 L0,220 L150,130 L280,190 L420,90 L560,200 L700,140 L850,210 L1000,150 L1140,200 L1140,280 Z" fill="#FDFAF5"/>
+  </svg>
+  <div class="container hero-content">
+    <span class="eyebrow">Сайты и лендинги · SVOY</span>
+    <h1 class="hero-title">Сайт, который <span class="accent">приводит клиентов</span>,<br>а не просто существует</h1>
+    <p class="hero-sub">Делаю сайты и лендинги для любого бизнеса — от локальной мастерской до онлайн-школы. Без шаблонов и без воды. Через ИИ-инструменты и личный контроль на каждом этапе.</p>
+    <div class="hero-buttons">
+      <a href="https://t.me/Shoma_SVOY" class="btn-primary">Обсудить проект</a>
+      <a href="#process" class="btn-secondary">Как это работает</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">3–7</div>
+        <div class="hero-meta-label">дней на лендинг</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">100%</div>
+        <div class="hero-meta-label">адаптация под бизнес</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">SVOY</div>
+        <div class="hero-meta-label">свой подход к делу</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="what-section" id="what">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Что я делаю</span>
+      <h2 class="section-title">Один сайт. <span class="it">Полная сборка.</span></h2>
+    </div>
+    <div class="what-grid reveal">
+      <div class="what-card">
+        <svg class="what-icon" viewBox="0 0 44 44" fill="none">
+          <rect x="6" y="6" width="32" height="32" rx="4" stroke="#C9A84C" stroke-width="1.6"/>
+          <line x1="6" y1="16" x2="38" y2="16" stroke="#C9A84C" stroke-width="1.6"/>
+          <circle cx="11" cy="11" r="1.2" fill="#C9A84C"/>
+          <circle cx="15" cy="11" r="1.2" fill="#C9A84C"/>
+        </svg>
+        <h3>Лендинги под продукт</h3>
+        <p>Одностраничный сайт под конкретное предложение — товар, услугу, акцию или запуск. Цель одна: довести посетителя до заявки.</p>
+      </div>
+      <div class="what-card">
+        <svg class="what-icon" viewBox="0 0 44 44" fill="none">
+          <rect x="6" y="6" width="14" height="32" rx="3" stroke="#C9A84C" stroke-width="1.6"/>
+          <rect x="24" y="6" width="14" height="14" rx="3" stroke="#9B8B6E" stroke-width="1.4"/>
+          <rect x="24" y="24" width="14" height="14" rx="3" stroke="#9B8B6E" stroke-width="1.4"/>
+        </svg>
+        <h3>Сайты для бизнеса</h3>
+        <p>Многостраничный сайт с каталогом, разделами и формами — для тех, кому нужно представить бизнес целиком, а не один продукт.</p>
+      </div>
+      <div class="what-card">
+        <svg class="what-icon" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="16" stroke="#C9A84C" stroke-width="1.6"/>
+          <path d="M22,14 L22,22 L28,26" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <h3>Доработка и поддержка</h3>
+        <p>Обновляю и докручиваю уже существующий сайт: ускоряю, переделываю дизайн, добавляю разделы — без переписывания всего с нуля.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process-section" id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Как это устроено</span>
+      <h2 class="section-title">Путь от заявки <span class="it">до готового сайта</span></h2>
+    </div>
+    <div class="process-path reveal">
+      <div class="path-line"></div>
+      <div class="path-line-progress" id="pathProgress"></div>
+      <div class="process-grid">
+        <div class="process-step active">
+          <div class="process-marker">1</div>
+          <h4>Заявка и созвон</h4>
+          <p>Обсуждаем бизнес, цель сайта и кто твой клиент. 15–20 минут, без лишних формальностей.</p>
+        </div>
+        <div class="process-step active">
+          <div class="process-marker">2</div>
+          <h4>Структура и текст</h4>
+          <p>Собираю структуру страницы и пишу тексты под твою аудиторию — не общие фразы, а конкретика.</p>
+        </div>
+        <div class="process-step active">
+          <div class="process-marker">3</div>
+          <h4>Дизайн и сборка</h4>
+          <p>Собираю сайт визуально и технически. Показываю промежуточный результат — правки на этом этапе бесплатны.</p>
+        </div>
+        <div class="process-step active">
+          <div class="process-marker">4</div>
+          <h4>Запуск</h4>
+          <p>Публикую сайт, подключаю домен при необходимости и передаю тебе готовый рабочий результат.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="container about-grid">
+    <div class="reveal">
+      <span class="eyebrow">Почему SVOY</span>
+      <h2>Не агентство. <span class="it">Один человек, который отвечает за результат.</span></h2>
+      <p>Я не передаю проект между менеджером, дизайнером и разработчиком. Всё веду сам — от первого разговора до запуска сайта.</p>
+      <p>Использую современные ИИ-инструменты в разработке — это позволяет делать качественный сайт быстрее и держать цену доступной без потери в качестве.</p>
+      <div class="about-quote">«Каждый сайт — как дом. Если экономишь на фундаменте, всё здание рано или поздно даёт трещину.»</div>
+    </div>
+    <div class="about-visual reveal">
+      <svg viewBox="0 0 400 380" width="100%" height="100%" fill="none">
+        <path d="M20,330 L90,170 L120,220 L160,330 Z" fill="#3A3020" opacity="0.6"/>
+        <path d="M100,330 L210,80 L240,140 L340,330 Z" fill="none" stroke="#C9A84C" stroke-width="2"/>
+        <path d="M190,150 L210,80 L230,150 L210,138 Z" fill="#C9A84C" opacity="0.5"/>
+        <path d="M250,330 L310,190 L370,330 Z" fill="#3A3020" opacity="0.4"/>
+        <line x1="10" y1="330" x2="380" y2="330" stroke="#C9A84C" stroke-width="0.7" opacity="0.5"/>
+        <circle cx="210" cy="80" r="3" fill="#E8D5A3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="advantages">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Преимущества</span>
+      <h2 class="section-title">Что получаешь, <span class="it">работая со мной</span></h2>
+    </div>
+    <div class="why-list reveal">
+      <div class="why-row">
+        <div class="why-num">01</div>
+        <h3>Прямая связь, без посредников</h3>
+        <p>Пишешь напрямую мне в Telegram — без менеджеров, тикетов и долгого ожидания ответа.</p>
+      </div>
+      <div class="why-row">
+        <div class="why-num">02</div>
+        <h3>Тексты под твою аудиторию</h3>
+        <p>Не вставляю универсальные фразы — пишу под твой бизнес и твоего клиента конкретно.</p>
+      </div>
+      <div class="why-row">
+        <div class="why-num">03</div>
+        <h3>Бесплатные правки на этапе сборки</h3>
+        <p>Показываю промежуточный результат и вношу изменения до того, как сайт считается готовым.</p>
+      </div>
+      <div class="why-row">
+        <div class="why-num">04</div>
+        <h3>Честные сроки</h3>
+        <p>Называю реальный срок сразу при обсуждении проекта — без скрытых задержек на середине пути.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Цены</span>
+      <h2 class="section-title">Выбери формат <span class="it">под свою задачу</span></h2>
+    </div>
+    <div class="pricing-grid reveal">
+      <div class="price-card">
+        <div class="price-name">Старт</div>
+        <div class="price-amount">от 10 000 <span>₽</span></div>
+        <div class="price-desc">Один лендинг под конкретный продукт или услугу.</div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 14 14"><path d="M2,7 L6,11 L12,3" stroke="#C9A84C" stroke-width="1.6" fill="none"/></svg> Одна страница</li>
+          <li><svg viewBox="0 0 14 14"><path d="M2,7 L6,11 L12,3" stroke="#C9A84C" stroke-width="1.6" fill="none"/></svg> Форма заявки</li>
+          <li><svg viewBox="0 0 14 14"><path d="M2,7 L6,11 L12,3" stroke="#C9A84C" stroke-width="1.6" fill="none"/></svg> Адаптация под телефон</li>
+          <li><svg viewBox="0 0 14 14"><path d="M2,7 L6,11 L12,3" stroke="#C9A84C" stroke-width="1.6" fill="none"/></svg> 3–5 дней</li>
+        </ul>
+        <a href="https://t.me/Shoma_SVOY" class="price-cta">Обсудить проект</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">Чаще выбирают</div>
+        <div class="price-name">Бизнес</div>
+        <div class="price-amount">от 30 000 <span>₽</span></div>
+        <div class="price-desc">Сайт с несколькими разделами под бизнес целиком.</div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 14 14"><path d="M2,7 L6,11 L12,3" stroke="#C9A84C" stroke-width="1.6" fill="none"/></svg> До 5 разделов</li>
+          <li><svg viewBox="0 0 14 14"><path d="M2,7 L6,11 L12,3" stroke="#C9A84C" stroke-width="1.6" fill="none"/></svg> Каталог или портфолио</li>
+          <li><svg viewBox="0 0 14 14"><path d="M2,7 L6,11 L12,3" stroke="#C9A84C" stroke-width="1.6" fill="none"/></svg> Интеграция с Telegram/WhatsApp</li>
+          <li><svg viewBox="0 0 14 14"><path d="M2,7 L6,11 L12,3" stroke="#C9A84C" stroke-width="1.6" fill="none"/></svg> 7–10 дней</li>
+        </ul>
+        <a href="https://t.me/Shoma_SVOY" class="price-cta">Обсудить проект</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Под задачу</div>
+        <div class="price-amount">по запросу</div>
+        <div class="price-desc">Нестандартный проект — обсуждаем объём и считаем индивидуально.</div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 14 14"><path d="M2,7 L6,11 L12,3" stroke="#C9A84C" stroke-width="1.6" fill="none"/></svg> Любой объём страниц</li>
+          <li><svg viewBox="0 0 14 14"><path d="M2,7 L6,11 L12,3" stroke="#C9A84C" stroke-width="1.6" fill="none"/></svg> Сложная структура</li>
+          <li><svg viewBox="0 0 14 14"><path d="M2,7 L6,11 L12,3" stroke="#C9A84C" stroke-width="1.6" fill="none"/></svg> Доработка существующего сайта</li>
+          <li><svg viewBox="0 0 14 14"><path d="M2,7 L6,11 L12,3" stroke="#C9A84C" stroke-width="1.6" fill="none"/></svg> Срок по договорённости</li>
+        </ul>
+        <a href="https://t.me/Shoma_SVOY" class="price-cta">Обсудить проект</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container" style="max-width: 760px;">
+    <div class="section-head reveal">
+      <span class="eyebrow">Вопросы</span>
+      <h2 class="section-title">Перед тем как <span class="it">написать</span></h2>
+    </div>
+    <div class="reveal">
+      <div class="faq-item">
+        <div class="faq-q"><span>Сколько времени занимает создание сайта?</span><div class="faq-icon"></div></div>
+        <div class="faq-a"><div class="faq-a-inner">Лендинг — от 3 до 7 дней. Сайт с несколькими разделами — от 7 до 10 дней. Точный срок называю после обсуждения задачи на созвоне.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Нужно ли мне уже иметь домен и хостинг?</span><div class="faq-icon"></div></div>
+        <div class="faq-a"><div class="faq-a-inner">Нет, не обязательно. Если у тебя их ещё нет — помогу подобрать и подключить на этапе запуска.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Что если сайт не понравится после сборки?</span><div class="faq-icon"></div></div>
+        <div class="faq-a"><div class="faq-a-inner">На этапе сборки показываю промежуточный результат и вношу правки бесплатно — до того, как мы оба считаем сайт готовым к запуску.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Работаешь с любой сферой бизнеса?</span><div class="faq-icon"></div></div>
+        <div class="faq-a"><div class="faq-a-inner">Да. Делаю сайты под любую нишу — от локальных услуг и магазинов до экспертов и онлайн-проектов.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Как происходит оплата?</span><div class="faq-icon"></div></div>
+        <div class="faq-a"><div class="faq-a-inner">Условия оплаты обсуждаем индивидуально на созвоне в зависимости от объёма проекта.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2 class="reveal">Готов обсудить <span class="it">свой проект?</span></h2>
+    <p class="reveal">Напиши в Telegram — отвечаю в течение дня и сразу предлагаю первые идеи под твою задачу.</p>
+    <div class="hero-buttons reveal">
+      <a href="https://t.me/Shoma_SVOY" class="btn-primary">Написать в Telegram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <svg viewBox="0 0 60 40" width="44" fill="none">
+            <path d="M4,32 L16,12 L20,18 L26,32" stroke="#9B8B6E" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M17,32 L30,6 L34,14 L44,32" stroke="#C9A84C" stroke-width="2.2" stroke-linejoin="round"/>
+            <path d="M36,32 L46,16 L56,32" stroke="#9B8B6E" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+          SVOY
+        </div>
+        <div class="footer-tagline">Сайты и лендинги под любой бизнес. Свой подход к каждому проекту.</div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Разделы</h5>
+          <a href="#what">Услуги</a>
+          <a href="#process">Процесс</a>
+          <a href="#pricing">Цены</a>
+        </div>
+        <div class="footer-col">
+          <h5>Связь</h5>
+          <a href="https://t.me/Shoma_SVOY">Telegram</a>
+          <a href="https://t.me/shamil_SVOY">Канал SVOY</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SVOY. Все права защищены.</span>
+      <span>Сделано с подходом SVOY 🏔️</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => revealObserver.observe(el));
+
+// Process path progress line animation
+const pathProgress = document.getElementById('pathProgress');
+const processSection = document.querySelector('.process-path');
+const pathObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      pathProgress.style.width = '100%';
+    }
+  });
+}, { threshold: 0.3 });
+if (processSection) pathObserver.observe(processSection);
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(openItem => {
+      if (openItem !== item) {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-a').style.maxHeight = null;
+      }
+    });
+    if (isOpen) {
+      item.classList.remove('open');
+      a.style.maxHeight = null;
+    } else {
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+
+// Header shrink on scroll
+let lastScroll = 0;
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+  const current = window.scrollY;
+  if (current > 40) {
+    header.style.boxShadow = '0 2px 24px rgba(44,36,22,0.06)';
+  } else {
+    header.style.boxShadow = 'none';
+  }
+  lastScroll = current;
+});
+
+</script>
+
+</body>
+</html>
